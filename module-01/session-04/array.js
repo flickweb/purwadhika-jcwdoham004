@@ -19,6 +19,8 @@ arrOfStr.pop(); // removes the last element of an array.
 arrOfStr.shift(); // removes the first element of an array.
 console.log(arrOfStr.length); // checks the length of an element
 
+console.log(arrOfNum.pop());
+
 
 console.log(arrOfStr);
 
@@ -30,7 +32,7 @@ for(let i = 0; i < arrOfStr.length; i++){
     console.log(arrOfStr[i].toUpperCase());
 }
 
-for (const value of arrOfStr){ //why can we use const? because after every loop, its a different instance.
+for (const value of arrOfStr){ // why can we use const? because after every loop, its a different instance.
     console.log(value.toUpperCase());
 }
 // the above example will always output everything inside the array.

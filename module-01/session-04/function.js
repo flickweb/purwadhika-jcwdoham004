@@ -68,6 +68,24 @@ function substractNumber(...nums){
 substractNumber(5, 3, 2, 5, 3, 5, 2, 1);
 
 
+
+// DEFAULT VALUE
+// Dipakai kalo gatau harus pake nomor brapa, nanti angka terakhirnya ngikutin what we setted, in this case b pasti jadi 1 if there's no value pas kita kasih argument.
+// Deafult value cuman bisa dipake di akhir variable atau in all variables, gaisa cuman di awal.
+// Ga bisa ditaruh diawal karena if we put a value in an argument, dia masukin paling kiri dulu, baru ke kanan.
+// So if "function perkalian (a = 1, b)" lalu km "console.log(perkalian(5));", yang ke ganti "a" lalu "b" tetep undefined.
+
+
+
+function perkalian (a, b = 1){
+  console.log(a , b);
+  return a * b;
+}
+
+console.log(perkalian(5));
+
+
+
 // FUNCTION EXPRESSION
 
 const multiplicationNumber = function (a, b){
@@ -222,4 +240,3 @@ function factorial(n) {
 //factorial(1) → 1 * factorial(0)
 //factorial(0) → 1 (stop)
 //Multiply on the way back: 1 → 1 → 2 → 6 → 24 → 120 
-  
