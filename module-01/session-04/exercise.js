@@ -10,27 +10,27 @@ const rl = readline.createInterface({
 
 // Exercise - Example Array Pseudocode
 
-// const add = (a, b) =>{
-//     return a + b;
-// };
+const add = (a, b) =>{
+    return a + b;
+};
 
-// console.log(add(2, 3));
+console.log(add(2, 3));
 
-// const array = [3, 5, 2, 9];
+const array = [3, 5, 2, 9];
 
-// function maxNumberFunc(arrayCheck){
-//     let maxNumber = arrayCheck[0];
+function maxNumberFunc(arrayCheck){
+    let maxNumber = arrayCheck[0];
 
-//     for(let i = 0; i < array.length; i++){
-//         if(arrayCheck[i] < maxNumber){
-//             maxNumber = arrayCheck[i];
-//         }
-//     }
-//     return maxNumber;
-// }
+    for(let i = 0; i < array.length; i++){
+        if(arrayCheck[i] < maxNumber){
+            maxNumber = arrayCheck[i];
+        }
+    }
+    return maxNumber;
+}
 
-// let result = maxNumberFunc(array);
-// console.log(result);
+let result = maxNumberFunc(array);
+console.log(result);
 
 
 
@@ -43,26 +43,26 @@ const rl = readline.createInterface({
 
 // Parameters : Height -> Triangle height
 
-// let input = 4;
+let input = 4;
 
-// const triangle = (height) =>{
+const triangle = (height) =>{
 
-//     let triangleDrawing = ""; // pake ini if not, jd undefined pas ditambah
-//     let count = 1;
+    let triangleDrawing = ""; // pake ini if not, jd undefined pas ditambah
+    let count = 1;
 
-//     for(let i = 1; i <= height; i++){
-//         for(j = 1; j <= i; j++){
-//             triangleDrawing +=  String(count) + " ";
-//             count++;
-//         }
-//         triangleDrawing += "\n";
-//     }
+    for(let i = 1; i <= height; i++){
+        for(j = 1; j <= i; j++){
+            triangleDrawing +=  String(count) + " ";
+            count++;
+        }
+        triangleDrawing += "\n";
+    }
 
-//     return triangleDrawing;
-// };
+    return triangleDrawing;
+};
 
-// let result2 = triangle(input);
-// console.log(result2);
+let result2 = triangle(input);
+console.log(result2);
 
 
 
@@ -71,34 +71,34 @@ const rl = readline.createInterface({
 // Multiple of 3 and 5 with "FizzBuzz"
 
 
-// rl.question("Input a number you want to use : ", (input2) => {
+rl.question("Input a number you want to use : ", (input2) => {
 
-//     const fizzBuzzFunc = (input2) => {
+    const fizzBuzzFunc = (input2) => {
 
-//         let result = ""
-//         // const fizz = "Fizz";
-//         // const buzz = "Buzz";
+        let result = ""
+        // const fizz = "Fizz";
+        // const buzz = "Buzz";
 
-//         for (let i = 1; i <= input2; i++) {
-//             if (i % 3 === 0 && i % 5 === 0) {
-//                 result += "FizzBuzz, ";
-//             } else if (i % 3 === 0) {
-//                 result += "Fizz, ";
-//             } else if (i % 5 === 0) {
-//                 result += "Buzz, ";
-//             } else {
-//                 result += `${String(i)}, `;
-//             }
-//         }
-//         return result.slice(0, -2);
+        for (let i = 1; i <= input2; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                result += "FizzBuzz, ";
+            } else if (i % 3 === 0) {
+                result += "Fizz, ";
+            } else if (i % 5 === 0) {
+                result += "Buzz, ";
+            } else {
+                result += `${String(i)}, `;
+            }
+        }
+        return result.slice(0, -2);
 
-//     };
+    };
 
-//     let result3 = fizzBuzzFunc(input2);
-//     console.log(result3);
+    let result3 = fizzBuzzFunc(input2);
+    console.log(result3);
 
-//     rl.close();
-// });
+    rl.close();
+});
 
 
 
@@ -106,32 +106,32 @@ const rl = readline.createInterface({
 // Formula : BMI = weight(kg) / (height(meter))**
 // Parameters : weight & height
 
-// rl.question("Input your weight : ", (inputWeight)=>{
-//     rl.question("Input your height in meters: ", (inputHeight)=>{
-//         let bmiStatus = ["less weight", "ideal", "overweight", "very overweight", "obesity"];
+rl.question("Input your weight : ", (inputWeight)=>{
+    rl.question("Input your height in meters: ", (inputHeight)=>{
+        let bmiStatus = ["less weight", "ideal", "overweight", "very overweight", "obesity"];
 
-//         const bmi = (weight, height)=>{
-//             return Number(weight) / (Number(height)** 2); //dont forget to return the callback, kalo ga ga kebaca nanti.
-//         };
-//         let bmiInput = bmi(inputWeight, inputHeight);
+        const bmi = (weight, height)=>{
+            return Number(weight) / (Number(height)** 2); //dont forget to return the callback, kalo ga ga kebaca nanti.
+        };
+        let bmiInput = bmi(inputWeight, inputHeight);
 
-//         if (bmiInput < 18.5) {
-//             console.log(bmiStatus[0]);// mending pake array daripada awal km write one by one.
-//           } else if (bmiInput > 18.5 && bmiInput < 24.9) {
-//             console.log(bmiStatus[1]);
-//           } else if (bmiInput > 25.0 && bmiInput < 29.9) {
-//             console.log(bmiStatus[2]);
-//           } else if (bmiInput > 30.0 && bmiInput < 39.9){
-//             console.log(bmiStatus[3])
-//           } else {
-//             console.log(bmiStatus[4]);
-//           }
+        if (bmiInput < 18.5) {
+            console.log(bmiStatus[0]);// mending pake array daripada awal km write one by one.
+          } else if (bmiInput > 18.5 && bmiInput < 24.9) {
+            console.log(bmiStatus[1]);
+          } else if (bmiInput > 25.0 && bmiInput < 29.9) {
+            console.log(bmiStatus[2]);
+          } else if (bmiInput > 30.0 && bmiInput < 39.9){
+            console.log(bmiStatus[3])
+          } else {
+            console.log(bmiStatus[4]);
+          }
         
-//           console.log(bmiInput);
+          console.log(bmiInput);
 
-//         rl.close();
-//     });
-// });
+        rl.close();
+    });
+});
 
 
 
