@@ -1,4 +1,4 @@
-// 2025-09-06, Saturday, 21:40
+// 2025-09-06, Saturday
 
 // Create a function to calculate array of student data
 
