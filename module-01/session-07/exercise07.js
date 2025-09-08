@@ -92,3 +92,4 @@ function factorial(n) {
   }
   
   console.log(factorial(5));
+  //ini ada di session-04 function.js, coba if u are bugged out, check lagi file itu. ada step by step resultnya.
