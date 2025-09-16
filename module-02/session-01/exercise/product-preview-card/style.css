@@ -1,0 +1,75 @@
+body{
+    background-color: #F2EAE2;
+    font-family: "Montserrat", sans-serif;
+}
+
+#card{
+    background-color: #FFFFFF;
+    width: 343px;
+    height: 611px;
+    border-radius: 16px;
+    margin-top: 156px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#boxDescription{
+    padding: 15px 20px 15px 20px;
+}
+
+#category{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 5px;
+    color: #6C7289;
+}
+
+#text{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 23px;
+    color: #6C7289;
+}
+
+h1{
+    font-family: "Fraunces", serif;
+}
+
+#price{
+    color: #3D8168;
+    font-family: "Fraunces", serif;
+    font-size: 28px;
+    font-weight: 700;
+    display: inline-block;
+    margin-right: 16px; 
+    vertical-align: middle;
+}
+
+#realPrice{
+    color: #6C7289;
+    font-size: 13px;
+    text-decoration:line-through;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#button{
+    width: 295px;
+    height: 48px;
+    background-color: #3D8168;
+    border-radius: 8px;
+    pad: 16px 8px;
+    vertical-align: middle;
+    margin: 0px auto 10px;
+}
+
+#buttonText{
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 100%;
+    font-style: bold;
+    text-align: center;
+    margin: 2% 2% 5% 2%;
+    padding: 5%;
+}
