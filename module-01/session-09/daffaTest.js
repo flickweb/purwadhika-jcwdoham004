@@ -45,3 +45,24 @@ class mobil {
     mobilGw.FungsiKecepatan({ speed: 80 });
     mobilGw.jalan();
     console.log(mobilGw.showStatus());
+
+
+/*RacingGame class,
+Constructor:
+constructor(car1: Car, car2: Car)
+,
+Methods:
+getRandomItem(): { speed: number }
+Possible items:
+{ speed: +20 } (boost),
+{ speed: -20 } (trap),
+{ speed: 0 } (nothing),
+,
+,
+start(): void
+Game flow:
+Show both cars’ status.,
+Give each car a random item.,
+Both cars move.,
+Repeat until one car’s fuel ≤ 0.,
+Compare distances → show winner. */
