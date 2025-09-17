@@ -1,0 +1,49 @@
+body{
+    /* height: ; */
+}
+
+.container {
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+.static{
+    position: static;
+    background-color: antiquewhite;
+}
+
+.relative{
+    position: relative;
+    top: 100px;
+    left: 100px;
+    background-color: azure;
+}
+
+.relative-absolute{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+    top: 10px;
+    width: 32px;
+    height: 32px;
+    background-color: bisque;
+    border: 1px solid gray;
+    border-radius: 100%;
+}
+
+.fixed{
+    position:fixed;
+    top: 0;
+    width: 100%;
+    background-color: blanchedalmond;
+}
+
+.sticky{
+    position: sticky;
+    top: 0;
+    background-color: burlywood;
+}

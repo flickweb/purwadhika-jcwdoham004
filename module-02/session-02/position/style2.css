@@ -1,0 +1,53 @@
+.container{
+    display: grid;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 6px;
+    /* grid-template-columns: 300px 300px 300px 300px 300px; */
+    grid-template-columns: repeat(5, 300px);
+    /* use above juga bisa */
+    gap: 30px;
+    padding: 30px;
+    
+}
+
+.item{
+    border: 1px solid black;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+.item-1{
+    grid-column: 1/4;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+header{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-between;
+    grid-column: 1/3;
+    background-color: whitesmoke;
+    height: 20px;
+}
+
+aside{
+    background-color: antiquewhite;
+}
+
+main{
+    background-color: burlywood;
+}
+
+footer{
+    background-color: gray;
+    grid-column: 1/3;
+}
