@@ -4,11 +4,13 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useEffect, useRef, useState } from "react";
 
+import { getAll, create } from "../../services/backendless.service"
+
 interface ITask {
-  id: number;
-  name: string;
+  objectId: number;
+  taskName: string;
   isChecked: boolean;
-  createdAt: Date;
+  createdAt: number;
 }
 
 export default function Home() {
@@ -21,36 +23,65 @@ export default function Home() {
     "ALL" | "ACTIVE" | "COMPLETE"
   >("ALL");
 
-  //fixed by kak bryan
-  const addNewTask = () => {
-    if (ref.current?.value) {
-      const lastId = todos[todos.length - 1]?.id || 0;
 
-      setTodos([
-        ...todos,
-        {
-          id: lastId + 1,
-          name: ref.current.value,
-          isChecked: false,
-          createdAt: new Date(),
-        },
-      ]);
+  //addition
+   const refreshData = async () => {
+    try {
+      const data = await getAll();
+
+      setTodos(data);
+    } catch (err: any) {
+      alert(err.message);
     }
   };
 
-  const onComplete = (item: ITask) => {
-    const newTasks = todos.map((t) =>
-      t.id === item.id ? { ...t, isChecked: !t.isChecked } : t
-    );
 
-    setTodos(newTasks);
+  //fixed by kak bryan
+  // const addNewTask = () => {
+  //   if (ref.current?.value) {
+  //     const lastId = todos[todos.length - 1]?.id || 0;
+
+  //     setTodos([
+  //       ...todos,
+  //       {
+  //         id: lastId + 1,
+  //         name: ref.current.value,
+  //         isChecked: false,
+  //         createdAt: new Date(),
+  //       },
+  //     ]);
+  //   }
+  // };
+  
+  //updated
+   const addNewTask = async () => {
+    try {
+      if (ref.current?.value) {
+        await create({ isChecked: false, taskName: ref.current.value });
+        alert("task berhasil diinput");
+
+        refreshData();
+      }
+    } catch (err: any) {
+      alert(err.message);
+    }
   };
 
-  const onDelete = (item: ITask) => {
-    const newTasks = todos.filter((t) => t.id !== item.id);
+  //old data
 
-    setTodos(newTasks);
-  };
+  // const onComplete = (item: ITask) => {
+  //   const newTasks = todos.map((t) =>
+  //     t.id === item.id ? { ...t, isChecked: !t.isChecked } : t
+  //   );
+
+  //   setTodos(newTasks);
+  // };
+
+  // const onDelete = (item: ITask) => {
+  //   const newTasks = todos.filter((t) => t.id !== item.id);
+
+  //   setTodos(newTasks);
+  // };
 
   // setTodo([...todo, { name: "", isChecked : false}]);
 
@@ -58,6 +89,47 @@ export default function Home() {
   //     const value = inputRef.current?.value?.trim().toLowerCase() || "";
   //   setFilter(value);
   // }
+
+  //updated
+  const onComplete = async (task: ITask) => {
+    try {
+      await fetch(
+        `${process.env.NEXT_PUBLIC_BACKENDLESS_URL}/${task.objectId}`,
+        {
+          method: "PUT",
+          body: JSON.stringify({
+            isChecked: !task.isChecked,
+            taskName: task.taskName,
+          }),
+        }
+      );
+
+      refreshData();
+    } catch (err: any) {
+      alert(err.message);
+    }
+  };
+
+  //updated
+  const onDelete = async (task: ITask) => {
+    try {
+      await fetch(
+        `${process.env.NEXT_PUBLIC_BACKENDLESS_URL}/${task.objectId}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      refreshData();
+    } catch (err: any) {
+      alert(err.message);
+    }
+  };
+
+  useEffect(() => {
+    refreshData();
+  }, []);
+
 
   return (
     <div className="flex justify-center font-jose">
@@ -114,7 +186,7 @@ export default function Home() {
               </div>
               {todos
                 .filter((t) => {
-                  if (t.name.includes(search)) {
+                  if (t.taskName.includes(search)) {
                     if (statusFilter === "ALL") {
                       return true;
                     } else if (statusFilter === "ACTIVE" && !t.isChecked) {
@@ -128,13 +200,13 @@ export default function Home() {
                 })
                 .sort((a, b) =>
                   sortFilter === "DESC"
-                    ? b.createdAt.getTime() - a.createdAt.getTime()
-                    : a.createdAt.getTime() - b.createdAt.getTime()
+                    ? b.createdAt - a.createdAt
+                    : a.createdAt - b.createdAt
                 )
                 .map((task) => {
                   return (
                     <div
-                      key={task.id}
+                      key={task.objectId}
                       className="flex flex-row items-center basis-1/7 border-b border-black gap-5 px-4 text-[18px] dark:bg-[#171823] dark:border-[#393A4B]"
                     >
                       <input
@@ -149,7 +221,7 @@ export default function Home() {
                             : ""
                         }`}
                       >
-                        {task.name}
+                        {task.taskName}
                       </span>
 
                       <button onClick={() => onDelete(task)}>x</button>
