@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="mx-auto my-6">
       <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] h-20 bg-gray-300 rounded-xl shadow-lg flex items-center justify-between px-8 z-50">
-        <div className="text-4xl font-bold">Flick's Website</div>
+        <div className="text-4xl font-bold">Felix's Website</div>
 
         <div className="flex items-center gap-8">
           <ul className="flex gap-6">
@@ -53,7 +53,7 @@ export default function Home() {
           <div className="md:max-w-lg">
             <p className="text-2xl md:text-4xl font-bold">Hey! 🖐️</p>
             <h1 className="mt-1 text-4xl md:text-6xl font-extrabold leading-tight">
-              I’m a programmer
+              I'm a programmer
               <br />
               based in Japan
             </h1>
@@ -67,7 +67,7 @@ export default function Home() {
                 className="rounded-md bg-gray-600 px-5 py-2 font-semibold hover:bg-neutral-300"
                 href="#contact"
               >
-                Let’s Connect!
+                Let's Connect!
               </a>
               <a
                 className="rounded-md bg-gray-600 px-5 py-2 font-semibold hover:bg-neutral-300"
@@ -108,14 +108,10 @@ export default function Home() {
               About me
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              We craft responsive, fast, and scalable web experiences that help
-              your business grow. From design to deployment, we ensure your
-              website is optimized for performance and conversion.
+              simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
-              Whether you're starting fresh or improving an existing site, our
-              team provides custom solutions built with modern frameworks and
-              best practices.
+              simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
           </div>
 
