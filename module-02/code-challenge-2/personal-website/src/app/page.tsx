@@ -55,7 +55,7 @@ export default function Home() {
             <h1 className="mt-1 text-4xl md:text-6xl font-extrabold leading-tight">
               I'm a programmer
               <br />
-              based in Japan
+              based in Indonesia
             </h1>
             <p className="mt-4 text-l font-semibold">
               Designing people-focused, high-performing, eye-popping websites
