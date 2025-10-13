@@ -11,7 +11,7 @@ const slides = [
 export default function Home() {
   return (
     <div className="mx-auto my-6">
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] h-20 bg-gray-300 rounded-xl shadow-lg flex items-center justify-between px-8 z-50">
+      <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] h-20 bg-gray-700 rounded-xl shadow-lg flex items-center justify-between px-8 z-50">
         <div className="text-4xl font-bold">Felix's Website</div>
 
         <div className="flex items-center gap-8">
